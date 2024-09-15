@@ -28,9 +28,9 @@ export const FadeInImage = ({uri, style}: Props) => {
 
   return (
     <View style={{justifyContent: 'center', alignItems: 'center'}}>
-      {isLoading && <ActivityIndicator style={{position: 'absolute'}} color="grey" size={30} />}
+      {isLoading && <ActivityIndicator style={{position: 'absolute'}} size={30} />}
 
-      <Animated.Image source={{uri}} onLoadEnd={onLoadEnd} style={[style, {opacity: animatedOpacity}]} />
+      <Animated.Image source={{uri}} onLoadEnd={onLoadEnd} style={[style, {opacity: animatedOpacity, resizeMode: 'contain'}]} />
     </View>
   );
 };
